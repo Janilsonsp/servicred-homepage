@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Mail, MapPin, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import logo from "@/assets/servicred-logo.png";
 import { CONTACT, NAV_ITEMS, whatsappLink } from "@/data/servicred";
 import { trackCta } from "@/lib/track";
@@ -130,7 +131,7 @@ export function SideNav() {
           onClick={() => trackCta("whatsapp_sidebar_cta", { channel: "whatsapp" })}
           className="tap mb-6 flex items-center justify-center gap-2 bg-gold px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-navy-deep transition-colors hover:bg-gold-light"
         >
-          <MessageCircle className="size-4" aria-hidden="true" />
+          <WhatsAppIcon className="size-4" aria-hidden={true} />
           Fale com um especialista
         </a>
 
@@ -215,7 +216,7 @@ export function SideNav() {
               onClick={() => trackCta("whatsapp_menu_mobile", { channel: "whatsapp" })}
               className="tap my-6 flex items-center justify-center gap-2 bg-gold px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-navy-deep"
             >
-              <MessageCircle className="size-4" aria-hidden="true" />
+              <WhatsAppIcon className="size-4" aria-hidden={true} />
               Fale com um especialista
             </a>
             <ContactBlock />

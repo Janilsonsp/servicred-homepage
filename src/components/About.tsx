@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Target, Eye, Gem } from "lucide-react";
+import { Target, Eye, Diamond } from "@phosphor-icons/react";
 import { ABOUT_TEXT } from "@/data/servicred";
 
 const PILLARS = [

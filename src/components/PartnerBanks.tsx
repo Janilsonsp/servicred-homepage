@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Landmark } from "lucide-react";
+import { Bank } from "@phosphor-icons/react";
 import { BANKS_DISCLAIMER, PARTNER_BANKS } from "@/data/servicred";
 
 export function PartnerBanks() {
@@ -56,9 +56,10 @@ export function PartnerBanks() {
               }`}
               style={{ transitionDelay: `${400 + index * 100}ms` }}
             >
-              <Landmark
+              <Bank
                 className="size-6 text-gold transition-transform duration-300 hover:scale-110"
                 aria-hidden="true"
+                weight="thin"
               />
               <span className="text-sm font-semibold text-navy-deep">{bank}</span>
             </li>

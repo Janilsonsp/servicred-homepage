@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Globe, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Globe, Mail, MapPin } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import logo from "@/assets/servicred-logo.png";
 import { CONTACT, LEGAL_DISCLAIMER, NAV_ITEMS, whatsappLink } from "@/data/servicred";
 import { trackCta } from "@/lib/track";
@@ -53,7 +54,7 @@ export function Footer() {
                 onClick={() => trackCta("whatsapp_rodape", { channel: "whatsapp" })}
                 className="tap inline-flex items-center gap-3 hover:text-gold-light"
               >
-                <MessageCircle className="size-4 text-gold" aria-hidden="true" />
+                <WhatsAppIcon className="size-4 text-gold" aria-hidden={true} />
                 {CONTACT.phoneLabel}
               </a>
             </li>

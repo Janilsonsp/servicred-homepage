@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { whatsappLink } from "@/data/servicred";
 import { trackCta } from "@/lib/track";
 import { cn } from "@/lib/utils";
@@ -38,7 +38,7 @@ export function WhatsAppLink({
         className,
       )}
     >
-      {showIcon ? <MessageCircle className="size-4 shrink-0" aria-hidden="true" /> : null}
+      {showIcon ? <WhatsAppIcon className="size-4 shrink-0" aria-hidden={true} /> : null}
       {children}
     </a>
   );

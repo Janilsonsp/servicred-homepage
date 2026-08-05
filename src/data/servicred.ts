@@ -1,32 +1,27 @@
-import type { LucideIcon } from "lucide-react";
+import type { ElementType } from "react";
 import {
-  BadgeCheck,
-  Banknote,
-  Building2,
-  ClipboardCheck,
-  Clock,
-  Coins,
-  Eye,
-  FileSignature,
+  Bank,
+  Certificate,
+  ChartLine,
+  ChartLineUp,
+  ChatsCircle,
+  ClipboardText,
+  CurrencyDollar,
+  Diamond,
   FileText,
-  Gem,
   Handshake,
-  Home,
-  Landmark,
-  LineChart,
-  MessageCircle,
-  Repeat,
-  Search,
+  House,
+  Lightning,
+  MagnifyingGlass,
+  Pen,
   ShieldCheck,
-  Sparkles,
   Star,
   Target,
-  TrendingUp,
-  UserCheck,
-  Users,
-  Wallet,
-  Zap,
-} from "lucide-react";
+  UserFocus,
+  Eye,
+  ArrowsClockwise,
+  Building,
+} from "@phosphor-icons/react";
 
 export const CONTACT = {
   phoneLabel: "(11) 98952-5276",
@@ -55,12 +50,12 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { label: "Contato", href: "/#contato", id: "contato" },
 ];
 
-export type Pillar = { label: string; icon: LucideIcon };
+export type Pillar = { label: string; icon: ElementType };
 
 export const TRUST_PILLARS: readonly Pillar[] = [
   { label: "Segurança", icon: ShieldCheck },
   { label: "Transparência", icon: Eye },
-  { label: "Agilidade", icon: Zap },
+  { label: "Agilidade", icon: Lightning },
   { label: "Confiança", icon: Handshake },
   { label: "Excelência", icon: Star },
 ];
@@ -68,7 +63,7 @@ export const TRUST_PILLARS: readonly Pillar[] = [
 export const ABOUT_TEXT =
   "A ServiCred é uma assessoria especializada em crédito imobiliário que conecta pessoas às melhores soluções financeiras para a realização do sonho da casa própria ou de grandes investimentos. Trabalhamos com os principais bancos do país para oferecer as melhores condições, com segurança, transparência e agilidade.";
 
-export const PILLARS: readonly { title: string; text: string; icon: LucideIcon }[] = [
+export const PILLARS: readonly { title: string; text: string; icon: ElementType }[] = [
   {
     title: "Missão",
     text: "Oferecer soluções inteligentes em crédito imobiliário com excelência e ética, proporcionando segurança e tranquilidade para que nossos clientes realizem seus sonhos.",
@@ -82,7 +77,7 @@ export const PILLARS: readonly { title: string; text: string; icon: LucideIcon }
   {
     title: "Valores",
     text: "Integridade, compromisso com o cliente, transparência, excelência no atendimento, responsabilidade e foco em resultados.",
-    icon: Gem,
+    icon: Diamond,
   },
 ];
 
@@ -92,54 +87,54 @@ export const DIRECTOR = {
   bio: "Com sólida experiência em gestão financeira e assessoria de crédito imobiliário, Juliane lidera a ServiCred com foco em excelência, transparência e atendimento personalizado. Seu compromisso é oferecer soluções financeiras seguras e acompanhar cada cliente em todas as etapas da conquista do seu imóvel.",
 } as const;
 
-export type Service = { title: string; description: string; icon: LucideIcon };
+export type Service = { title: string; description: string; icon: ElementType };
 
 export const SERVICES: readonly Service[] = [
   {
     title: "Crédito imobiliário",
     description: "Compra de imóveis novos e usados.",
-    icon: Home,
+    icon: House,
   },
   {
     title: "Refinanciamento e portabilidade",
     description: "Melhores condições para o seu contrato.",
-    icon: Repeat,
+    icon: ArrowsClockwise,
   },
   {
     title: "Consórcio imobiliário",
     description: "Planejamento e conquista com inteligência.",
-    icon: Building2,
+    icon: Building,
   },
   {
     title: "Assessoria completa",
     description: "Do início à assinatura do contrato, com suporte total.",
-    icon: ClipboardCheck,
+    icon: ClipboardText,
   },
   {
     title: "Análise de crédito",
     description: "Orientação para aumentar suas chances de aprovação.",
-    icon: Search,
+    icon: MagnifyingGlass,
   },
   {
     title: "Soluções para investidores",
     description: "Estratégias para quem investe no mercado imobiliário.",
-    icon: TrendingUp,
+    icon: ChartLineUp,
   },
 ];
 
-export type Step = { title: string; description: string; icon: LucideIcon };
+export type Step = { title: string; description: string; icon: ElementType };
 
 export const PROCESS_STEPS: readonly Step[] = [
   {
     title: "Primeiro contato",
     description: "Entendimento da sua necessidade.",
-    icon: MessageCircle,
+    icon: ChatsCircle,
   },
-  { title: "Análise de perfil", description: "Estudo de crédito e viabilidade.", icon: UserCheck },
+  { title: "Análise de perfil", description: "Estudo de crédito e viabilidade.", icon: UserFocus },
   {
     title: "Simulação personalizada",
     description: "Busca das melhores taxas e condições.",
-    icon: LineChart,
+    icon: ChartLine,
   },
   {
     title: "Documentação",
@@ -149,12 +144,12 @@ export const PROCESS_STEPS: readonly Step[] = [
   {
     title: "Aprovação do crédito",
     description: "Acompanhamento de todo o processo.",
-    icon: BadgeCheck,
+    icon: Certificate,
   },
   {
     title: "Assinatura e realização",
     description: "Assinatura do contrato e concretização do seu sonho.",
-    icon: FileSignature,
+    icon: Pen,
   },
 ];
 
@@ -179,14 +174,12 @@ export const DIFFERENTIALS: readonly string[] = [
   "Sob medida para cada cliente",
 ];
 
-export const WHY_CHOOSE: readonly { title: string; icon: LucideIcon }[] = [
-  { title: "Mais chances de aprovação", icon: Sparkles },
-  { title: "Melhores taxas e condições", icon: Banknote },
-  { title: "Economia de tempo e dinheiro", icon: Clock },
+export const WHY_CHOOSE: readonly { title: string; icon: ElementType }[] = [
+  { title: "Mais chances de aprovação", icon: Star },
+  { title: "Melhores taxas e condições", icon: CurrencyDollar },
+  { title: "Economia de tempo e dinheiro", icon: Target },
   { title: "Segurança e tranquilidade", icon: ShieldCheck },
 ];
 
 export const LEGAL_DISCLAIMER =
   "A ServiCred atua como assessoria de crédito imobiliário. A concessão de crédito, taxas, prazos e condições dependem da análise e aprovação da instituição financeira escolhida.";
-
-export const MISC_ICONS = { Landmark, Users, Wallet, Coins };

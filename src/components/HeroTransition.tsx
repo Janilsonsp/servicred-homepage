@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ShieldCheck, Eye, Zap } from "lucide-react";
+import { ShieldCheck, Eye, Lightning } from "@phosphor-icons/react";
 
 const ITEMS = [
   { label: "Segurança em todas as etapas", icon: ShieldCheck },
