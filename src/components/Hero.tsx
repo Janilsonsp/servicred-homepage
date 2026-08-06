@@ -20,8 +20,7 @@ export function Hero() {
 
   return (
     <section
-      id="inicio"
-      className="relative isolate flex min-h-[min(820px,92vh)] items-center overflow-hidden bg-navy-deep lg:min-h-[720px]"
+      className="relative isolate flex flex-1 items-center overflow-hidden bg-navy-deep"
     >
       {/* Video background */}
       <video

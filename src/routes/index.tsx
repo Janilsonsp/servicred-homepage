@@ -72,8 +72,10 @@ function Index() {
       <SideNav />
       <div className="lg:pl-72">
         <main>
-          <Hero />
-          <HeroTransition />
+          <section id="inicio" className="home-section">
+            <Hero />
+            <HeroTransition />
+          </section>
           <About />
           <DirectorProfile />
           <ServicesGrid />
