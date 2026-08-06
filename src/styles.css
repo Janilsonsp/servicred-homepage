@@ -195,6 +195,15 @@
     padding-block: clamp(72px, 9vh, 120px);
   }
 
+  .contact-section {
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-navy);
+    scroll-margin-top: var(--navigation-offset, 0px);
+  }
+
   .tap {
     min-height: 44px;
     min-width: 44px;

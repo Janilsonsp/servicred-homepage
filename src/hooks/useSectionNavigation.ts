@@ -23,12 +23,17 @@ export function useSectionNavigation() {
     const headerH = isMobile ? MOBILE_HEADER_HEIGHT : 0;
     const vpH = window.innerHeight - headerH;
     const secTop = section.getBoundingClientRect().top + window.scrollY;
-    const secH = section.offsetHeight;
 
-    const shouldCenter = secH < vpH;
-    const top = shouldCenter
-      ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
-      : Math.max(0, secTop - headerH);
+    let top: number;
+    if (sectionId === "contato") {
+      top = Math.max(0, secTop - headerH - 40);
+    } else {
+      const secH = section.offsetHeight;
+      const shouldCenter = secH < vpH;
+      top = shouldCenter
+        ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
+        : Math.max(0, secTop - headerH);
+    }
 
     target.current = top;
 

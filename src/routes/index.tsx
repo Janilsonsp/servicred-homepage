@@ -80,9 +80,11 @@ function Index() {
           <ProcessTimeline />
           <PartnerBanks />
           <Differentials />
-          <FinalCTA />
         </main>
-        <Footer />
+        <section id="contato" className="contact-section">
+          <FinalCTA />
+          <Footer />
+        </section>
       </div>
       <WhatsAppButton />
     </>

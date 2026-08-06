@@ -23,7 +23,7 @@ export function FinalCTA() {
   }, []);
 
   return (
-    <section id="contato" className="relative isolate overflow-hidden bg-navy-deep" ref={sectionRef}>
+    <section className="relative isolate overflow-hidden bg-navy-deep" ref={sectionRef}>
       <img
         src={chaves}
         alt="Entrega das chaves de um imóvel"
