@@ -4,7 +4,7 @@ import { ShieldCheck, Eye, Lightning } from "@phosphor-icons/react";
 const ITEMS = [
   { label: "Segurança em todas as etapas", icon: ShieldCheck },
   { label: "Transparência nas negociações", icon: Eye },
-  { label: "Agilidade na aprovação", icon: Zap },
+  { label: "Agilidade na aprovação", icon: Lightning },
 ];
 
 export function HeroTransition() {
