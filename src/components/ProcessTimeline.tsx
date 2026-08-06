@@ -22,7 +22,7 @@ export function ProcessTimeline() {
   }, []);
 
   return (
-    <section id="como-funciona" className="section-y bg-white overflow-hidden" ref={sectionRef}>
+    <section id="como-funciona" className="page-section bg-white overflow-hidden" ref={sectionRef}>
       <div className="container-page">
         <div className="max-w-2xl">
           <p

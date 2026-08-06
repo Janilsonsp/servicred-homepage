@@ -41,7 +41,7 @@ export function About() {
   }, []);
 
   return (
-    <section id="quem-somos" className="section-y bg-white" ref={sectionRef}>
+    <section id="quem-somos" className="page-section bg-white" ref={sectionRef}>
       <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-20">
         {/* Left column — heading + text */}
         <div>

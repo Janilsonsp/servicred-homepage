@@ -1,20 +1,24 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import logo from "@/assets/servicred-logo.png";
 import { CONTACT, NAV_ITEMS, whatsappLink } from "@/data/servicred";
 import { trackCta } from "@/lib/track";
 import { cn } from "@/lib/utils";
+import { useSectionNavigation } from "@/hooks/useSectionNavigation";
 
-function NavList({ active, onNavigate }: { active: string; onNavigate?: () => void }) {
+function NavList({ active, onItemClick }: { active: string; onItemClick: (id: string) => void }) {
   return (
     <ul className="flex flex-col">
       {NAV_ITEMS.map((item) => (
         <li key={item.id}>
           <a
             href={item.href}
-            onClick={onNavigate}
-            aria-current={active === item.id ? "true" : undefined}
+            onClick={(e) => {
+              e.preventDefault();
+              onItemClick(item.id);
+            }}
+            aria-current={active === item.id ? "location" : undefined}
             className={cn(
               "tap flex items-center border-l-2 py-3 pl-4 text-sm uppercase tracking-[0.12em] transition-colors",
               active === item.id
@@ -61,33 +65,27 @@ function ContactBlock() {
 
 export function SideNav() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("inicio");
   const [scrolled, setScrolled] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const { active, navigateToSection } = useSectionNavigation();
+
+  const handleNavClick = useCallback(
+    (sectionId: string) => {
+      if (open) {
+        setOpen(false);
+        requestAnimationFrame(() => navigateToSection(sectionId));
+      } else {
+        navigateToSection(sectionId);
+      }
+    },
+    [open, navigateToSection],
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const sections = NAV_ITEMS.map((i) => document.getElementById(i.id)).filter(
-      (el): el is HTMLElement => Boolean(el),
-    );
-    if (sections.length === 0) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
-      },
-      { rootMargin: "-20% 0px -60% 0px", threshold: [0, 0.15, 0.3] },
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -108,6 +106,10 @@ export function SideNav() {
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-72 flex-col border-r border-white/10 bg-navy-deep px-7 py-8 lg:flex">
         <a
           href="/#inicio"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("inicio");
+          }}
           className="tap flex items-center"
           aria-label="ServiCred — página inicial"
         >
@@ -121,7 +123,7 @@ export function SideNav() {
         </a>
 
         <nav aria-label="Navegação principal" className="mt-10 flex-1">
-          <NavList active={active} />
+          <NavList active={active} onItemClick={handleNavClick} />
         </nav>
 
         <a
@@ -149,6 +151,10 @@ export function SideNav() {
       >
         <a
           href="/#inicio"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("inicio");
+          }}
           className="tap flex items-center"
           aria-label="ServiCred — página inicial"
         >
@@ -207,7 +213,7 @@ export function SideNav() {
               </button>
             </div>
             <nav aria-label="Navegação mobile" className="mt-4 flex-1">
-              <NavList active={active} onNavigate={() => setOpen(false)} />
+              <NavList active={active} onItemClick={handleNavClick} />
             </nav>
             <a
               href={whatsappLink()}

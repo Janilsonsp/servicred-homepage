@@ -23,7 +23,7 @@ export function Differentials() {
   }, []);
 
   return (
-    <section id="diferenciais" className="section-y bg-white overflow-hidden" ref={sectionRef}>
+    <section id="diferenciais" className="page-section bg-white overflow-hidden" ref={sectionRef}>
       <div className="container-page grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
         <div>
           <p

@@ -23,7 +23,7 @@ export function ServicesGrid() {
   }, []);
 
   return (
-    <section id="servicos" className="section-y bg-cream overflow-hidden" ref={sectionRef}>
+    <section id="servicos" className="page-section bg-cream overflow-hidden" ref={sectionRef}>
       <div className="container-page">
         <div className="max-w-2xl">
           <p
