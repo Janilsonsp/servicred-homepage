@@ -1,39 +1,18 @@
-import { useEffect, useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { whatsappLink } from "@/data/servicred";
 
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const onLoaded = () => {
-      video.currentTime = 0;
-      video.pause();
-    };
-
-    video.addEventListener("loadeddata", onLoaded);
-    return () => video.removeEventListener("loadeddata", onLoaded);
-  }, []);
-
   return (
     <section
       className="relative isolate flex flex-1 items-center overflow-hidden bg-navy-deep"
     >
-      {/* Video background */}
-      <video
-        ref={videoRef}
-        muted
-        playsInline
-        preload="metadata"
+      {/* Image background */}
+      <img
+        src="/heroprincipal.png"
+        alt=""
         aria-hidden="true"
-        tabIndex={-1}
         className="absolute inset-0 size-full object-cover object-center"
-      >
-        <source src="/servicred-analise-aprovacao-hero.mp4" type="video/mp4" />
-      </video>
+      />
 
       {/* Layered overlay */}
       <div
