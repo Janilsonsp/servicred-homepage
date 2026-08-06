@@ -26,9 +26,11 @@ export function useSectionNavigation() {
     const secH = section.offsetHeight;
 
     const shouldCenter = secH < vpH && sectionId !== "contato";
-    const top = shouldCenter
-      ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
-      : Math.max(0, secTop - headerH);
+    const top = sectionId === "contato"
+      ? Math.max(0, secTop - headerH + 48)
+      : shouldCenter
+        ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
+        : Math.max(0, secTop - headerH);
 
     target.current = top;
 
