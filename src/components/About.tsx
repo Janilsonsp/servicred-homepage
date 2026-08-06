@@ -16,7 +16,7 @@ const PILLARS = [
   {
     title: "Valores",
     text: "Integridade, compromisso com o cliente, transparência, excelência no atendimento, responsabilidade e foco em resultados.",
-    icon: Gem,
+    icon: Diamond,
   },
 ];
 
