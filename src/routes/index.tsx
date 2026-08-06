@@ -83,7 +83,6 @@ function Index() {
           <FinalCTA />
         </main>
         <Footer />
-        <div aria-hidden="true" className="h-[40vh]" />
       </div>
       <WhatsAppButton />
     </>

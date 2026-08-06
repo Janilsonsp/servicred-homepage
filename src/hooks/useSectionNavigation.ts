@@ -25,12 +25,10 @@ export function useSectionNavigation() {
     const secTop = section.getBoundingClientRect().top + window.scrollY;
     const secH = section.offsetHeight;
 
-    const shouldCenter = secH < vpH && sectionId !== "contato";
-    const top = sectionId === "contato"
-      ? Math.max(0, secTop - headerH)
-      : shouldCenter
-        ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
-        : Math.max(0, secTop - headerH);
+    const shouldCenter = secH < vpH;
+    const top = shouldCenter
+      ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
+      : Math.max(0, secTop - headerH);
 
     target.current = top;
 
