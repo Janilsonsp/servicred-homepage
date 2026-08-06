@@ -27,7 +27,7 @@ export function useSectionNavigation() {
 
     const shouldCenter = secH < vpH && sectionId !== "contato";
     const top = sectionId === "contato"
-      ? Math.max(0, secTop - headerH + 96)
+      ? Math.max(0, secTop - headerH - 48)
       : shouldCenter
         ? Math.max(0, secTop - headerH - (vpH - secH) / 2)
         : Math.max(0, secTop - headerH);
